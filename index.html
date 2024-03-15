@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filtru</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="toggle">
+    <a><i class="fa fa-bars"></i></a>
+  </div>
+  <div class="menu">
+      <ul>
+          <li><a href="bibliografie.html">Bibliografie</a></li>
+          <li><a href="index.html">Filtru</a></li>
+      </ul>
+  </div>
+  <div class="containerul">
+  <h1>Aplicare Filtru</h1>
+  <div id="jsonContent"></div>
+  <div class="container">
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+    <canvas id="canvas"></canvas>
+    <select id="filterDropdown" onchange="applySelectedFilter()">
+      <option value="none">Niciun filtru</option>
+      <option value="grayscaleAverage">Alb-Negru (Metoda mediei)</option>
+      <option value="normalizeColors">Normalize Colors</option>
+      <option value="sobelOperator">Sobel Operator</option>
+      <option value="prewittOperator">Prewitt Operator</option>
+      <option value="imageSharpening">Image Sharpening</option>
+      <option value="imageSmoothing">Image Smoothing</option>
+      <option value="mirrorImage">Mirror Image</option>
+      <option value="binaryOperation">Binary Operation</option>
+      <option value="grayLevelHistogramRange">Gray Level Histogram Range</option>
+      <option value="decreaseColorDepth">Decrease Color Depth</option>
+      <option value="rotateImage">Rotate Image</option>
+      <option value="translateImage">Translate Image</option>
+      <option value="colorToGrayscaleWeighted">Color To Grayscale Weighted</option>
+      <option value="pixelReplicationZoom">Pixel Replication Zoom</option>
+      <option value="zeroOrderHoldZoom">Zero Order Hold Zoom</option>
+      <option value="zoomKTimes">Zoom K Times</option>
+      <option value="adjustBrightness">Adjust Brightness</option>
+      <option value="adjustContrast">Adjust Contrast</option>
+      <option value="linearGrayLevelTransform">Linear Gray Level Transform</option>
+      <option value="logarithmicGrayTransform">Logarithmic Gray Transform</option>
+      <option value="powerLawGrayTransform">Power Law Gray Transform</option>
+      <option value="applyLaplacianOperator">Apply Laplacian Operator</option>
+  </select>
+  <div id="translateInputs" style="display: none;">
+    <input type="number" id="translateXInput" placeholder="Enter translateX">
+    <input type="number" id="translateYInput" placeholder="Enter translateY">
+    <button onclick="applyTranslation()">Apply Translation</button>
+  </div>
+  </div>
+  </div>
+  <div id="processingInfo"></div>
+  <script src="script.js"></script>
+</body>
+</html>

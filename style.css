@@ -1,0 +1,217 @@
+/* Setează fontul, culoarea de fundal și elimină marginile și padding-ul implicite pentru corpul paginii */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Poziționează butonul de comutare fixat pe ecran */
+.toggle {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 2
+}
+
+/* Creează un cerc în spatele butonului de comutare */
+.toggle a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+/* Stilizează butonul de comutare */
+.toggle a {
+    text-decoration: none;
+    color: #262626;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+/* Poziționează și stilizează meniul */
+.menu {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+/* Poziționează elementele meniului */
+ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Stilizează elementele meniului */
+ul li {
+    list-style: none;
+}
+
+/* Stilizează linkurile din elementele meniului */
+ul li a {
+    padding: 10px;
+    display: inline-block;
+    font-family: verdana;
+    font-size: 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #262626;
+}
+
+/* Stilizează linkurile din elementele meniului la survol */
+ul li a:hover {
+    background: #5de2f4
+}
+
+/* Stilizează meniul când este activ */
+.menu.active {
+    left: 0;
+    overflow: auto;
+}
+
+/* Stilizează toate celelalte linkuri */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+/* Stilizează toate celelalte linkuri la survol */
+a:hover {
+    color: #2980b9;
+}
+
+/* Stilizează container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Stilizează containerul */
+.containerul {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* Stilizează dropdown-ul select */
+select {
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    font-size: 1em;
+    color: #333;
+    margin: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Stilizează dropdown-ul select când este focalizat */
+select:focus {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Stilizează bara de derulare în dropdown-ul select */
+select::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Stilizează pista barei de derulare în dropdown-ul select */
+select::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Stilizează mânerul barei de derulare în dropdown-ul select */
+select::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+}
+
+/* Stilizează mânerul barei de derulare în dropdown-ul select la survol */
+select::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Stilizează opțiunile din dropdown-ul select */
+option {
+    padding: 10px;
+    background-color: #e6e6e6;
+    color: #000;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Stilizează canvas-ul */
+canvas {
+    border: 1px solid #000;
+    background-color: #fff;
+    margin: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Stilizează titlul h1 */
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Stilizează textul preformatat din div-ul jsonContent */
+#jsonContent pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+    background-color: #f6f8fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Ascunde elementele canvas1 și canvas2 implicit */
+#canvas1, #canvas2 {
+    display: none;
+}
+
+/* Schimbă aspectul pentru ecrane cu o lățime maximă de 600px */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    canvas,
+    select {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

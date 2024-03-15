@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bibliografie</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="toggle">
+    <a><i class="fa fa-bars"></i></a>
+  </div>
+  <div class="menu">
+      <ul>
+          <li><a href="bibliografie.html">Bibliografie</a></li>
+          <li><a href="index.html">Filtru</a></li>
+      </ul>
+  </div>
+  <div class="containerul">
+  <h1>Aplicație de Procesare a Imaginilor</h1>
+  <h2>Descriere Aplicație Procesare Imagini</h1>
+  <p>Este vorba despre o aplicație JavaScript dedicată procesării imaginilor, care primește datele imaginii în format JSON de la API-ul DOG. Această aplicație afișează detaliile JSON-ului în browser, oferind utilizatorului o perspectivă asupra informațiilor obținute. Imaginea este apoi prelucrată în canvas, având posibilitatea de a aplica două tipuri de prelucrare diferite: fie un efect de oglindire a imaginii, fie o prelucrare pe jumătatea stângă a acesteia.</p>
+
+  <p>Pentru prelucrare, se folosesc exclusiv algoritmi și secvențe de cod low-level, conform cerințelor temei, respectând totodată standardele de codare și principiile de comentare pentru o înțelegere clară a procesului de prelucrare a imaginii. Aplicația înregistrează și afișează timpul necesar pentru fiecare etapă de procesare a imaginii, astfel încât să poată fi evaluată eficiența și performanța fiecărei operațiuni.</p>
+
+  <p>Prin intermediul acestei aplicații, utilizatorul poate observa procesul de prelucrare a imaginilor într-un mod interactiv și poate experimenta diverse efecte și transformări asupra imaginilor.</p>
+  <h1>Partea Teoretică - Prelucrare Imagini</h1>
+  
+  <section>
+    <h2>Prelucrarea Imaginilor în JavaScript</h2>
+    <p>
+      <strong>Canvas API:</strong> Canvas API oferă un mediu interactiv pentru desenarea și manipularea imaginilor în browser. El permite accesul la pixeli și aplicarea diferitelor efecte sau transformări.
+    </p>
+    <p>
+      <strong>Manipularea Pixelilor:</strong> Prin intermediul coordonatelor, pixelii unei imagini pot fi accesați și modificați în canvas folosind valori RGB/RGBA pentru diverse efecte.
+    </p>
+    <p>
+      <strong>Algoritmi de Procesare a Imaginilor:</strong> Algoritmi precum efectele de oglindire, ajustarea contrastului, detectarea marginilor etc., sunt esențiale în prelucrarea imaginilor.
+    </p>
+  </section>
+
+  <section>
+    <h2>Utilizarea API-urilor și Manipularea Datelor JSON</h2>
+    <p>
+      <strong>Lucrul cu API-uri în JavaScript:</strong> Este esențial să se înțeleagă modul în care se fac cereri către API-uri, manipularea răspunsurilor JSON și integrarea acestora în aplicații web.
+    </p>
+    <p>
+      <strong>JavaScript Asincron:</strong> Utilizarea `async`/`await` pentru gestionarea cererilor asincrone către API-uri este crucială într-o aplicație web modernă.
+    </p>
+  </section>
+
+  <section>
+    <h2>Standarde de Codare și Comentare</h2>
+    <p>
+      <strong>Coding Standards:</strong> Implementarea standardelor de codare pentru a menține o structură și o formă coerentă a codului JavaScript.
+    </p>
+    <p>
+      <strong>Comentarii în Cod:</strong> Comentarea corespunzătoare a codului JavaScript este esențială pentru o înțelegere clară și o documentare adecvată a funcționalităților implementate.
+    </p>
+  </section>
+
+  <section>
+    <h2>Eficiență și Măsurarea Performanței</h2>
+    <p>
+      <strong>Măsurarea Timpului de Execuție:</strong> Importanța măsurării timpului necesar pentru diverse etape ale procesului de prelucrare a imaginilor.
+    </p>
+    <p>
+      <strong>Optimizarea Eficienței:</strong> Cum se pot optimiza algoritmii și codul pentru o prelucrare eficientă a imaginilor, maximizând performanța și minimizând redundanța.
+    </p>
+  </section>
+
+  <section>
+    <h2>Interactivitate și Experiență a Utilizatorului</h2>
+    <p>
+      <strong>Interacțiunea Utilizatorului:</strong> Crearea unei interfețe intuitive pentru aplicarea efectelor și vizualizarea schimbărilor în timp real pe imaginile prelucrate.
+    </p>
+    <p>
+      <strong>Experiența Utilizatorului:</strong> Importanța feedback-ului vizual și a interacțiunii pentru o experiență plăcută a utilizatorului în timpul utilizării aplicației.
+    </p>
+  </section>
+  <h1>Descrierea funcțională și Modulele</h1>
+
+  <h2>Descrierea funcțională:</h2>
+  <p>Utilizează fetch pentru a accesa API-ul <a href="https://dog.ceo/api/breeds/image/random">https://dog.ceo/api/breeds/image/random</a> și primește o imagine aleatorie cu un câine.</p>
+  <p>După încărcare, imaginea este prelucrată în patru etape (processStep1, processStep2, processStep3, processStep4) utilizând diverse operații de tăiere și prelucrare a imaginii.</p>
+  <p>Apoi, în funcția applySelectedFilter, utilizatorul poate aplica diferite filtre și operații pe imaginea prelucrată sau originală. Există o gamă largă de filtre disponibile, cum ar fi convertirea culorilor la tonuri de gri, operații de detectare a marginilor, ajustări ale luminozității și contrastului etc.</p>
+  <p>În timpul aplicării filtrelor, imaginea prelucrată este afișată în elementul canvas.</p>
+
+  <h2>Modulele:</h2>
+  <p>Încărcarea imaginii și prelucrarea inițială: Funcția loadDogImage încarcă o imagine aleatorie de câine și o afișează în canvas. De asemenea, afișează informații despre imagine într-un element HTML (jsonContent).</p>
+  <p>Prelucrarea imaginii în etape: Funcțiile processStep1, processStep2, processStep3, processStep4 împart imaginea în patru segmente și aplică diverse întârzieri și afișări parțiale în canvas.</p>
+  <p>Aplicarea filtrelor: Funcția applySelectedFilter permite utilizatorului să aplice diverse filtre și operații asupra imaginii, în funcție de selecția făcută într-un dropdown.</p>
+  <p>Funcții de filtrare și prelucrare a imaginii: Mai multe funcții sunt definite pentru a efectua operațiile specifice de prelucrare a imaginii, cum ar fi convertirea la tonuri de gri, detectarea marginilor, modificări de luminozitate și contrast, redimensionări, rotiri etc.</p>
+
+  <h2>Funcționalități suplimentare:</h2>
+  <p><strong>Dropdown pentru filtre:</strong> Există un dropdown în care utilizatorii pot selecta diferite tipuri de filtre sau operații pe care doresc să le aplice imaginii. Filtrele sunt enumerate și implementate ca funcții separate, fiecare efectuând o anumită transformare asupra imaginii.</p>
+  <p><strong>Actualizare interactivă:</strong> Atunci când utilizatorul selectează un filtru din dropdown, imaginea prelucrată este afișată în timp real în canvas, reflectând efectul filtrului aplicat.</p>
+  <p><strong>Interfață utilizator prietenoasă:</strong> Toate funcțiile și interacțiunile sunt integrate într-o interfață web simplă și prietenoasă. Utilizatorii pot naviga ușor între diversele filtre și pot vedea cum transformările influențează imaginea câinelui.</p>
+  <p><strong>Gestionarea erorilor:</strong> Codul poate gestiona erori în cazul în care nu se poate accesa API-ul de unde se încarcă imaginile sau în cazul unor probleme legate de prelucrarea imaginilor.</p>
+  <p><strong>Această aplicație oferă o modalitate interactivă și distractivă de a explora transformările imaginilor de câini, permițând utilizatorilor să experimenteze diverse filtre și să vadă cum acestea schimbă aspectul imaginii.</strong></p>
+  <h1>Bibliografie pentru Cod</h1>
+  <p>Aici este o bibliografie pentru codul utilizat:</p>
+  <l>
+      <li>
+        <a href="https://stackoverflow.com/">Stack Overflow</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/">MDN</a>
+      </li>
+      <li>
+        <a href="https://github.com/">GitHub</a>
+      </li>
+      <li>
+          <a href="https://www.tutorialspoint.com/">TutorialsPoint</a>
+      </li>
+      <li>
+        <a href="https://www.w3schools.com/">W3Schools</a>
+      </li>
+      <li>
+        <a href="https://www.geeksforgeeks.org/">GeeksforGeeks</a>
+    </li>
+    <li>
+        <a href="https://css-tricks.com/">CSS-Tricks</a>
+    </li>
+  </ol>
+  </div> 
+  <script>
+    $(document).ready(function(){
+        $('.toggle').click(function(){
+            $('.menu').toggleClass('active');
+        });
+    });
+  </script>
+</body>
+</html>
